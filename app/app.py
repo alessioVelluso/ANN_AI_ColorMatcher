@@ -11,7 +11,7 @@ def write_in_file():
         bg = obj["bg_color"]
         front = obj["front_color"]
         match = obj["match"]
-        with open("./app/AI/data.csv", 'a', encoding='utf8') as f:
+        with open("./AI/data.csv", 'a', encoding='utf8') as f:
             f.write(f"\n{bg},{front},{match}")
 
     print("Data saved, closing the server.")
