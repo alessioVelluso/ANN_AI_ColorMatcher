@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Color Training</title>
+</head>
+<body>
+    <div class="container" id="bgEl">
+        
+        <div class="card" id="colorPreview">
+            <div class="left">
+                bg: <em id="bgPreview">#ffffff</em>
+            </div>
+            <div class="space"> - </div>
+            <div class="right">
+                front: <em id="frontPreview">#000000</em>
+            </div>
+        </div>
+
+        <h1 id="frontEl">Lorem Ipsum</h1>
+
+
+        <div id="nopeBtn"><img src="{{ url_for('static', filename='assets/cross_icon.svg') }}" alt=""></div>
+        <div class="card" id="colorPredict">
+            <div class="left">
+                <input type="color" id="choosenColor">
+            </div>
+            <div class="right">
+                <button id="predictSingle">Predict your front color!</button>
+            </div>
+        </div>
+        <div id="yepBtn"><img src="{{ url_for('static', filename='assets/tick_icon.svg') }}" alt=""></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

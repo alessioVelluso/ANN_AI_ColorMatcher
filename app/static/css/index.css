@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 { font-size: 4rem; text-align: center;}
+#bgEl, #frontEl { transition: 200ms background-color ease; }
+
+
+
+
+
+.card {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    display: flex;
+    font-size: 0.7rem;
+    padding: 0.3rem;
+}
+.card .left, .card .right, .card .space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .left, .card .right { flex-grow: 1; flex-shrink: 1; }
+.card .space { flex-grow: 2; flex-shrink: 1.5; margin: 0 1.5rem; }
+em#bgPreview, em#frontPreview {
+    margin: 0 0.7rem;
+}
+#colorPreview {
+    width: 95%;
+    max-width: 220px;
+    position: absolute;
+    border-radius: 3px;
+    top: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#colorPredict {
+    width: 95%;
+    max-width: 220px;
+    position: absolute;
+    border-radius: 3px;
+    bottom: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#nopeBtn, #yepBtn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 1.5rem;
+
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 0.5px solid gray;
+    background-color: whitesmoke;
+
+    cursor: pointer;
+    transition: 250ms background-color ease;
+}
+#nopeBtn img, #yepBtn img { height: 90% }
+
+#nopeBtn { left: 1.5rem; }
+#yepBtn { right: 1.5rem; }
+#nopeBtn:hover { background-color: rgba(253, 60, 60, 0.5); }
+#yepBtn:hover { background-color: rgba(60, 253, 70, 0.5); }
+
+
+@media(max-width: 768px) {
+    :root { font-size: 0.9rem; }
+}
+@media(max-width: 425px) {
+    :root { font-size: 0.8rem; }
+}
