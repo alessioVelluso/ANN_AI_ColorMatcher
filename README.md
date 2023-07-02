@@ -1,6 +1,6 @@
 # ANN_ColorMatcher
 
-Little ANN made for studies, it can pair a passed hex-string (also never seen before) and pair it to a color that should fit well above the one passed.\
+Little ANN made for studies, it can pair a passed hex-string (also never seen before) to a color that should fit well above the one passed.\
 I know there are lot of wrong stuff in the process but its just for fun and to approach the Deep Learning!
 
 If you want to test it you will need:
