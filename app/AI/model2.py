@@ -37,14 +37,16 @@ X_train, X_test = ss.fit_transform(X_train), ss.transform(X_test)
 # --- Model
 class_n = max(y_train)+1
 ANN = keras.models.Sequential()
-ANN.add(keras.layers.Dense(units=6, activation='relu'))
-ANN.add(keras.layers.Dense(units=9, activation='relu'))
-ANN.add(keras.layers.Dense(units=6, activation='relu'))
+ANN.add(keras.layers.Dense(units=16, activation='relu'))
+ANN.add(keras.layers.Dense(units=32, activation='relu'))
+ANN.add(keras.layers.Dense(units=64, activation='relu'))
+ANN.add(keras.layers.Dense(units=128, activation='relu'))
+ANN.add(keras.layers.Dense(units=class_n*2, activation='relu'))
 ANN.add(keras.layers.Dense(units=class_n, activation='softmax'))
 
 ANN.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=['accuracy'])
 
-ANN.fit(X_train, y_train, batch_size=64, epochs=500)
+ANN.fit(X_train, y_train, batch_size=64, epochs=600)
 
 
 
