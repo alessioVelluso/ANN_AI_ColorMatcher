@@ -1,19 +1,18 @@
-from AI.model2 import ANN, le, ct, np, ss
+from AI.model import ANN, le, ct, np, ss
+import colorsys
 from PIL import ImageColor
 from flask import jsonify
 
 def predict_single(color):
     try:
         if len(color) < 7: color = color + "0"*(7-len(color))
-        color = ImageColor.getcolor(color, "RGB") + (1,)
-        color = np.array(color)
-        print(color)
+        rgb = ImageColor.getcolor(color, "RGB")
+        hsl = colorsys.rgb_to_hls(rgb[0] / 255, rgb[1] / 255, rgb[2] / 255)
 
-        #X_input = [[color]]
-        #X_input =ct.transform(X_input).toarray()
-        X_input = [color]
-        X_input =ss.transform(X_input)
-        print(X_input)
+        color = np.array(hsl  + (1,))
+        X_input = color.reshape(-1, 4)
+        X_input[:, :-1] = ss.transform(X_input[:, :-1])
+        X_input[:, -1] = [float(val) for val in X_input[:, -1]]
         
         predictions = ANN.predict(X_input)
 
